@@ -68,7 +68,7 @@ const UserForm = ({values, errors, touched, status}) =>{
                         <li>User's Name: {user.name}</li>
                         <li>User's Email: {user.email}</li>
                         <li>User's Password: {user.password}</li>
-                        <li>Accepted terms of service?: {user.termsOfService}</li>
+                        <li>Accepted terms of service? {user.termsOfService.toString()}</li>
                     </ul>
                 );
             })}
