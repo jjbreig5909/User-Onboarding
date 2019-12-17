@@ -11,11 +11,12 @@ const UserForm = ({values, errors, touched, status}) =>{
         status && setUsers(users => [...users, status]);
     }, [status]);
     return(
-        <div>
-            <Form>
+        <div className="user-form-container">
+            <Form className="user-form">
                 <label htmlFor="name">
-                    Name
+                    Name: 
                     <Field
+                    className="form-field"
                     id="name"
                     type="text"
                     name="name"
@@ -26,8 +27,9 @@ const UserForm = ({values, errors, touched, status}) =>{
                     )}
                 </label>
                 <label htmlFor="Email">
-                    Email
+                    Email: 
                     <Field
+                    className="form-field"
                     id="email"
                     type="email"
                     name="email"
@@ -37,8 +39,9 @@ const UserForm = ({values, errors, touched, status}) =>{
                     )}
                 </label>
                 <label htmlFor="password">
-                    Password
+                    Password: 
                     <Field
+                        className="form-field"
                         id="password"
                         type="password"
                         name="password"
@@ -51,6 +54,7 @@ const UserForm = ({values, errors, touched, status}) =>{
                 <label className="checkbox-container">
                     Do you accept the Terms of Service?
                     <Field
+                        className="form-field-checkbox"
                         type="checkbox"
                         name="termsOfService"
                         checked={values.termsOfService}
@@ -65,10 +69,10 @@ const UserForm = ({values, errors, touched, status}) =>{
             {users.map(user => {
                 return (
                     <ul key={user.id}>
-                        <li>User's Name: {user.name}</li>
-                        <li>User's Email: {user.email}</li>
-                        <li>User's Password: {user.password}</li>
-                        <li>Accepted terms of service? {user.termsOfService.toString()}</li>
+                        <li><span className="user-data">User's Name:</span> {user.name}</li>
+                        <li><span className="user-data">User's Email:</span> {user.email}</li>
+                        <li><span className="user-data">User's Password:</span> {user.password}</li>
+                        <li><span className="user-data">Accepted terms of service?</span> {user.termsOfService.toString()}</li>
                     </ul>
                 );
             })}
@@ -107,10 +111,8 @@ const FormikUserForm = withFormik({
             .post("https://reqres.in/api/users/", values)
             .then(res => {
                 console.log("success", res);
-                // sends a status update through props in AnimalForm with value as res.data content
                 setStatus(res.data);
 
-                //clears form inputs, from FormikBag
                 resetForm();
             })
             .catch(err => console.log(err.response));

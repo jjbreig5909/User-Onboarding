@@ -11,3 +11,88 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.user-form-container{
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 30%;
+  border-radius: 15px;
+  background-color: #81d4fa;
+}
+
+.user-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field{
+  width: 50%;
+  margin: 5px auto 0px auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.form-field-checkbox{
+  width: 50%;
+  margin: 5px auto 0px auto;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ff9800;
+}
+
+.user-form label{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 80%;
+  margin: 10px auto;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.user-form label .form-field-checkbox{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 10px auto;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.errors{
+  color: red;
+  font-weight: 700;
+}
+
+.user-form button{
+  width: 25%;
+  margin: 10px auto 20px auto;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff9800;
+}
+
+.user-form button:hover{
+  cursor: pointer;
+  background-color: #ffc947;
+  transition: all .3s;
+}
+
+ul{
+  background-color: #b6ffff;
+  width: 50%;
+  margin: 15px auto;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: black 0px 1px 5px 0px ;
+}
+
+.user-data{
+  font-weight: 700;
+}
